@@ -1,0 +1,5 @@
+Name: Ygi Santos, Student Number: 2000172390, Section: 2A, Course: BSIT, Guardian: Aylene Santos, Guardian Number: 09215933562, Present: 3, Absent: 2
+Name: Zyrill Dela Cruz, Student Number: 2000128392, Section: 2A, Course: BSIT, Guardian: Rafael, Guardian Number: 09283928392, Present: 3, Absent: 2
+Name: asdioashd, Student Number: 1237392901, Section: 2A, Course: BSBA, Guardian: aiohsd, Guardian Number: 92929292922, Present: 0, Absent: 0
+Name: Kyla Arquio, Student Number: 20012382, Section: 2A, Course: BSIT, Guardian: Mark, Guardian Number: 09227388283, Present: 3, Absent: 2
+Name: ioashd, Student Number: 927392901, Section: 2A, Course: BSBA, Guardian: aiohsd, Guardian Number: 92929292922, Present: 0, Absent: 0

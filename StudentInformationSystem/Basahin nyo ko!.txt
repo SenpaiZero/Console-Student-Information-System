@@ -1,0 +1,25 @@
+WARNING
+	WAG MAG TERMINATE NG PROGRAM
+	MAWAWALA LANG YUNG DATA NYAN
+	
+	EXIT THE PROGRAM GAMIT YUNG MENU
+	
+	IN CASE NA NAWALA YUNG DATA AY MAY BACK UP TXT FILE AKONG GINAWA
+	PWEDE NYO ICOPY-PASTE YON OR BACKUP NYO NALANG YUNG TXT FILE NYO IF EVER
+	GUSTYO NYO NA MGA PANGALAN NG SCHOOL MATES ILAGAY
+		
+		
+INPUT GUIDE
+	Name: 5 Minimum - 30 Max characters -  numbers and special character are not allowed
+	Student Num: 5 Minimum - 20 Max Numbers - Letters and characters are not allowed
+	Section: 1 latter and 1 number only (example) - 2A 3B 4A 1D
+	Course: courses lng pwede 
+	Guardian Name:  5 Minimum - 30 Max characters -  numbers and special character are not allowed
+	Guardian Number: 11 Numbers and numbers only
+
+Database (txt files)
+	Nasa src > data
+	ung backup is pang emergency lang pag nawala yung data sa main txt file pero 
+	confident ako na na-fix ko na  yung bug na yon. Sabihin nyo nalang sakin pag nawala data.
+
+	Basta isure nyong nabasa nyo yung warning. Thank you!
