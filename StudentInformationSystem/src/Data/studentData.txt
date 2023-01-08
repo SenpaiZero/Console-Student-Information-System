@@ -1,7 +1,8 @@
-Name: Ygi Santos, Student Number: 2000172390, Section: 2A, Course: BSIT, Guardian: Aylene Santos, Guardian Number: 09215933562, Present: 5, Absent: 5
-Name: Zyrill Dela Cruz, Student Number: 2000128392, Section: 2A, Course: BSIT, Guardian: Rafael Dela Cruz, Guardian Number: 09283928392, Present: 8, Absent: 2
+Name: Ygi Santos, Student Number: 2000172390, Section: 2A, Course: BSIT, Guardian: Aylene Santos, Guardian Number: 09215933562, Present: 6, Absent: 5
+Name: Zyrill Dela Cruz, Student Number: 2000128392, Section: 2A, Course: BSIT, Guardian: Rafael Dela Cruz, Guardian Number: 09283928392, Present: 8, Absent: 3
 Name: Jaycee Torres, Student Number: 2000928389, Section: 2A, Course: BSBA, Guardian: Dean Torrez, Guardian Number: 92929292922, Present: 0, Absent: 1
-Name: Kyla Arquio, Student Number: 200123825, Section: 2A, Course: BSIT, Guardian: Mark Arquio, Guardian Number: 09227388283, Present: 6, Absent: 4
+Name: Kyla Arquio, Student Number: 200123825, Section: 2A, Course: BSIT, Guardian: Mark Arquio, Guardian Number: 09227388283, Present: 7, Absent: 4
 Name: Marc Alipuyo, Student Number: 2000293882, Section: 2A, Course: BSBA, Guardian: Ben Alipuyo, Guardian Number: 92929292922, Present: 1, Absent: 0
 Name: Albert Borlongan, Student Number: 20002938123, Section: 2C, Course: BSIT, Guardian: MJ Borlongan, Guardian Number: 09123456789, Present: 1, Absent: 0
 Name: Jose Ramos, Student Number: 2000938273, Section: 4D, Course: BSCS, Guardian: Allen Ramos, Guardian Number: 09283729983, Present: 0, Absent: 0
+Name: Jaycee Klaire, Student Number: 2000123852, Section: 2A, Course: BSIT, Guardian: Mark Anthonie, Guardian Number: 09218577232, Present: 0, Absent: 1

@@ -9,12 +9,7 @@ public class runStudent {
 		//WAG MAG TERMINATE NG PROGRAM
 		//MAWAWALA LANG YUNG DATA NYAN
 		
-		//EXIT THE PROGRAM GAMIT YUNG MENU
-		
-		//IN CASE NA NA WALA YUNG DATA AY MAY BACK UP TXT FILE AKONG GINAWA
-		//PWEDE NYO ICOPY-PASTE YON OR BACKUP NYO NALANG YUNG TXT FILE NYO IF EVER
-		//GUSTYO NYO NA MGA PANGALAN NG SCHOOL MATES ILAGAY
-		
+		//EXIT THE PROGRAM GAMIT YUNG MENU (number 5)
 		
 		//INPUT GUIDE
 		//Name: 5 Minimum - 30 Max characters -  numbers and special character are not allowed
@@ -29,6 +24,7 @@ public class runStudent {
 		Scanner scan = new Scanner(System.in);
 	
 		System.out.println(" WELCOME TO STUDENT INFORMATION SYSTEM");
+		//Looping for admin login
 		do 
 		{
 			System.out.print(" Enter username: ");
@@ -43,6 +39,7 @@ public class runStudent {
 
 		System.out.println(" (!)Login successfully(!)");
 		
+		//Looping for main program
 		do 
 		{
 			System.out.println(" ============================================="
@@ -52,16 +49,22 @@ public class runStudent {
 			System.out.print("\n Enter: ");
 			userChoice = scan.nextLine();
 			
+			//Switch case for
+			//1. attendace
+			//2. add students
+			//3. remove students
+			//4. Search Students
 			switch (userChoice)
 			{
 			//attendance
 			case "1":
+				//if the txt file is empty
 				if(student.getAllStudent().length <= 0)
 				{
 					System.out.println(" The database is empty. Please add new student");
 					break;
 				}
-				System.out.println(" Enter exit to every input to go back\n");
+				System.out.println(" Enter exit to any input to go back\n");
 				do 
 				{
 					System.out.print(" Section: ");
@@ -69,6 +72,7 @@ public class runStudent {
 					System.out.print(" Course: ");
 					courseInput = scan.nextLine();
 					
+					//if user input is exit = stop the attendance program
 					if("exit".matches(sectionInput+"|"+courseInput)) {
 						break;
 					}
@@ -82,9 +86,10 @@ public class runStudent {
 				break;
 			//Add student
 			case "2":
-				System.out.println(" Enter exit to every input to go back");
+				System.out.println(" Enter exit to any input to go back");
 				do 
 				{
+					//Asking user input
 					System.out.print("\n Student Name: ");
 					studentNameInput = scan.nextLine();
 					System.out.print(" Student Number: ");
@@ -98,10 +103,12 @@ public class runStudent {
 					System.out.print(" Guardian Number: ");
 					guardianNum = scan.nextLine();
 					
-					if("exit".matches(studentNameInput+"|"+studentNumInput+"|"+sectionInput+"|"+courseInput)) {
+					//If any input is exit = stop the code for adding students
+					if("exit".matches(studentNameInput+"|"+studentNumInput+"|"+sectionInput+"|"+courseInput)) 
+					{
 						break;
 					}
-					if(isValidInput(studentNameInput, studentNumInput, sectionInput, courseInput, guardian, guardianNum) ) 
+					if(isValidInput(studentNameInput, studentNumInput, sectionInput, courseInput, guardian, guardianNum)) 
 					{
 						student.addStudent(studentNameInput, studentNumInput, sectionInput, courseInput, guardian, guardianNum);
 						break;
@@ -111,6 +118,7 @@ public class runStudent {
 				break;
 			//Remove student
 			case "3":
+				//if txt file is empty
 				if(student.getAllStudent().length <= 0)
 				{
 					System.out.println(" The database is empty. Please add new student");
@@ -123,9 +131,11 @@ public class runStudent {
 				}
 				
 				break;
+			//Search students
 			case "4":
 				System.out.println("\n ==================================="
 						+ "=============================================");
+				//if txt file is empty
 				if(student.getAllStudent().length <= 0)
 				{
 					System.out.println(" The database is empty. Please add new student");
@@ -135,6 +145,7 @@ public class runStudent {
 				System.out.print("\n Enter: ");
 				userChoice = scan.nextLine();
 				
+				//Search all students in specific section
 				if(userChoice.equals("1")) 
 				{
 					System.out.println(" Enter exit to every input to go back");
@@ -157,6 +168,7 @@ public class runStudent {
 					} while (true);
 					
 				} 
+				//Search studing with student number
 				else if(userChoice.equals("2")) 
 				{
 					System.out.println(" Enter exit to go back\n");
@@ -190,20 +202,27 @@ public class runStudent {
 		} while(admin.isLogin(username, password));
 	}
 	
+	//Check if user input is correct
 	public static boolean isValidInput(String name, String studentNum, String section, String course, String guardian, String guardianNum) 
 	{
 
+		//Checking name (only letters - minimum 5 characters - maximum 30 characters)
 		if(Pattern.matches("^[a-z A-Z]{5,30}$", name)) 
 		{
+			//Checking student number (minimum character 7 - maximum character 20)
 			if(Pattern.matches("^[0-9]{7,20}$", studentNum)) 
 			{
+				//Checking year and section (year 1 to 4 - section A to D)
 				if(section.toUpperCase().matches("1A|1B|1C|1D|2A|2B|2C|2D|3A|3B|3C|3D|4A|4B|4C|4D")) 
 				{
+					//Checking course
 					if(course.toUpperCase().matches("BSIT|BSCS|BSIS|IT|ACT|BSBA|BSA|BSAIS|BSMA|BSRTCS|ART"
 							+ "|BSHM|BSCM|HRA|HRS|BSTM|TEM|BSCPE|BMMA|BACOMM"))
 					{
+						//Checking guardian name (letters only - minimum 5 - maximum 30)
 						if(Pattern.matches("^[a-z A-Z]{5,30}$", guardian)) 
 						{
+							//Checking guardian number (number only - 11 characters only)
 							if(Pattern.matches("[0-9]{11}", guardianNum)) 
 							{
 								return true;
@@ -242,9 +261,12 @@ public class runStudent {
 		return false;
 	}
 	
+	//Check if user input is correct
 	public static boolean isValidInput(String section, String course) {
+		//Checking section and year
 		if(section.toUpperCase().matches("1A|1B|1C|1D|2A|2B|2C|2D|3A|3B|3C|3D|4A|4B|4C|4D")) 
 		{
+			//Checking course
 			if(course.toUpperCase().matches("BSIT|BSCS|BSIS|IT|ACT|BSBA|BSA|BSAIS|BSMA|BSRTCS|ART"
 					+ "|BSHM|BSCM|HRA|HRS|BSTM|TEM|BSCPE|BMMA|BACOMM"))
 			{

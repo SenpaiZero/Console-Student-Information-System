@@ -23,10 +23,13 @@ public class Student extends studentData{
 		
 		String line;
 		
+		//While txt file has lines
+		//Chinecheck neto each line yung text file
 		while (sc.hasNextLine()) {
 			line = sc.nextLine().strip();
 			rawData.add(line);
 		}
+		//Callign setter in studentData class
 		setAllStudent(rawData.toArray(new String[rawData.size()]));
 	}
 	
@@ -40,15 +43,18 @@ public class Student extends studentData{
 		FileWriter writer = new FileWriter(path, true);
 		String line;
 		
+		//For each students
 		for (int i = 0; i < getAllStudent().length; i++) 
 		{
 			line = getAllStudent()[i];
+			//Checking if the name already exist
 			if(line.toUpperCase().contains(name.toUpperCase())) 
 			{
 				System.out.println(" Name already exist");
 				return false;
 			}
 
+			//Checking if student number already exist
 			if(line.contains(studentNum)) 
 			{
 				System.out.println(" Student number already exist");
@@ -56,7 +62,7 @@ public class Student extends studentData{
 			}
 		}
 
-		//Saving string into the txt file
+		//Saving the string into the txt file
 		writer.write("\nName: " + name
 				+ ", Student Number: " + studentNum
 				+ ", Section: " + section.toUpperCase()
@@ -88,7 +94,7 @@ public class Student extends studentData{
 			}
 			line = getAllStudent()[i];
 			
-			//remove
+			//remove the student if the student number is in the txt file
 			if(line.contains(studentNum)) 
 			{
 				std = line.split(",");
@@ -103,12 +109,14 @@ public class Student extends studentData{
 
 		if(isCorrect == true)
 		{
+			//Printing student information the user wants to delete
 			System.out.printf("%n %s %n%s %n%s %n%s %n%s %n%s %n%s %n%s%n%n", 
 					std[0], std[1], std[2], std[3], std[4], std[5], std[6], std[7]);
 			
 			
 			System.out.println(" Are you sure you want to remove this student? [Y] [N]");
 			
+			//If the user input is Y, constinue deleting the student 
 			if(sc.nextLine().equalsIgnoreCase("Y"))
 			{
 				System.out.println(" Successfully removed the student you entered");
@@ -146,6 +154,8 @@ public class Student extends studentData{
 		System.out.println("\n ================================================================================================================="
 				+ "===================================================================================");
 		
+		//Getting the data (nireremove muna yung category such as name, section, etc)
+		//Kumbaga value nalang meron wala ng variable
 		for (int i = 0; i < sameSectionStudents.size(); i++) {
 			std = sameSectionStudents.get(i).split(",");
 			System.out.printf("%n%30s %20s %20s %20s %20s %30s %20s %20s", 
@@ -171,10 +181,12 @@ public class Student extends studentData{
 		boolean isContain = false;
 		boolean isCorrect = true;
 		
+		//For each students on the list
 		for (int i = 0; i < getAllStudent().length; i++) 
 		{
 			line = getAllStudent()[i];
 			
+			//if student number length is less the 7 redo the loop
 			if(studentNum.length() < 7)
 			{
 				isCorrect = false;
@@ -192,6 +204,7 @@ public class Student extends studentData{
 
 		if(isContain) 
 		{
+			//print the student info if the student number is correct
 			System.out.printf("%n %s %n%s %n%s %n%s %n%s %n%s %n%s %n%s%n%n", 
 					std[0], std[1], std[2], std[3], std[4], std[5], std[6], std[7]);
 		}
@@ -211,6 +224,7 @@ public class Student extends studentData{
 		String[] std = new String[6];
 		String line;
 		
+		//To make sure the String buffer is empty
 		data.delete(0, data.length());
 		boolean isAppend = true;
 		String choice = "";
@@ -239,6 +253,8 @@ public class Student extends studentData{
 							+ "\n Enter: ");
 					choice = scan.nextLine();
 					System.out.println("---------------------------------");
+					
+					//If user input is exit, stop the attendance program
 					if(choice.equalsIgnoreCase("exit")) 
 					{
 						break;
@@ -253,6 +269,7 @@ public class Student extends studentData{
 					if(choice.equals("1")) 
 					{
 						//present
+						//Kinukuha data tapos nilalagay sa string buffer
 						data.append("\n"+tempData[0].strip()
 								+", " + tempData[1].strip()
 								+", " + tempData[2].strip()
@@ -266,6 +283,7 @@ public class Student extends studentData{
 					else if(choice.equals("2"))
 					{
 						//Absent
+						//Kinukuha data tapos nilalagay sa string buffer
 						data.append("\n"+tempData[0].strip()
 								+", " + tempData[1].strip()
 								+", " + tempData[2].strip()
@@ -278,12 +296,14 @@ public class Student extends studentData{
 					} 
 					else 
 					{
+						//Balik sa past student if input is incorrect
 						i--;
 						continue;
 					}
 				}
 			}
 			
+			//append next line
 			if(isAppend == true) 
 			{
 				data.append("\n"+line);
